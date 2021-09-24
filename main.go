@@ -14,7 +14,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html")
 }
 
-// playRouhd is a handler that decides the outcome of a round,
+// playRound is a handler that decides the outcome of a round,
 // and returns JSON indicating round result.
 func playRound(w http.ResponseWriter, r *http.Request) {
 	playerChoice, _ := strconv.Atoi(r.URL.Query().Get("c"))
