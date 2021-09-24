@@ -6,11 +6,16 @@ import (
 )
 
 const (
-	ROCK     = 0 // beats scissors. (scissors + 1) % 3 = 0
-	PAPER    = 1 // beats rock. (rock + 1) % 3 = 1
-	SCISSORS = 2 // beats paper. (paper + 1) % 3 = 2
+	// Rock beats scissors. (scissors + 1) % 3 = 0
+	ROCK = 0
+	// PAPER beats rock. (rock + 1) % 3 = 1
+	PAPER = 1
+	// SCISSORS beats paper. (paper + 1) % 3 = 2
+	SCISSORS = 2
 )
 
+// Round is the result sent back after playing a round,
+// in JSON format.
 type Round struct {
 	Message        string `json:"message"`
 	ComputerChoice string `json:"computer_choice"`
@@ -35,6 +40,7 @@ var drawMessages = []string{
 	"Nobody wins, but you can try again.",
 }
 
+// PlayRound is the logic for a single round of play
 func PlayRound(playerValue int) Round {
 	rand.Seed(time.Now().UnixNano())
 	computerValue := rand.Intn(3)
