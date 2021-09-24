@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	// Rock beats scissors. (scissors + 1) % 3 = 0
+	// ROCK beats scissors. (scissors + 1) % 3 = 0
 	ROCK = 0
 	// PAPER beats rock. (rock + 1) % 3 = 1
 	PAPER = 1
